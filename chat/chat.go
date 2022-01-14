@@ -6,7 +6,9 @@ import (
 	"golang.org/x/net/context"
 )
 
-type Server struct{}
+type Server struct {
+	UnimplementedChatServiceServer
+}
 
 // Implement the rpc method SayHello() defined in chat.proto
 func (s *Server) SayHello(ctx context.Context, message *Message) (*Message, error) {
